@@ -1,0 +1,62 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  background: black;
+}
+
+.container{
+  height: 31.25em;
+  width: 31.25em;
+  border: 1px solid transparent;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+
+.planet{
+  height: 15.62em;
+  width: 15.62em;
+  background: rgb(10, 168, 216);
+  border-radius: 50%;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.planet:before{
+  content: "";
+  position: absolute;
+  height: 1.5em;
+  width: 1.5em;
+  background: rgb(117, 111, 111);
+  top: 6em;
+  left: 3em;
+  border-radius: 50%;
+  box-shadow: 2em 5em 0 0.6em gray, 2em -2em 0 1em grey;
+}
+
+.satellite{
+  height: 2em;
+  width: 2em;
+  border-radius: 50%;
+  background: white;
+  position: relative;
+  left: 5em;
+  bottom: -20em;
+  animation:  spin 3s infinite;
+  z-index: 1;
+}
+
+@keyframes spin{
+  49% {z-index: 1;}
+  50% {bottom: -9.3em; left: 23em; z-index: -1;}
+  100%{z-index: -1;}
+}
